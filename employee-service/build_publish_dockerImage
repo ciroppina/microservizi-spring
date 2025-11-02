@@ -1,0 +1,11 @@
+#!/bin/sh
+# ----------------------------------------------------------------------------
+echo "Inizio! maven build" 
+echo "" 
+./mvnw clean install
+echo "" 
+echo "Docker image build and publish!"
+echo "" 
+docker build ./ -t employee-service
+echo "" 
+echo "Finito!"

@@ -1,0 +1,26 @@
+#version: '3.8'
+
+services:
+  employee-service:
+    image: employee-service
+    build:
+      context: ./employee-service
+    ports:
+      - "8081:8081"
+    networks:
+      - microservices-net
+
+  department-service:
+    image: department-service
+    build:
+      context: ./department-service
+    ports:
+      - "8082:8082"
+    depends_on:
+      - employee-service
+    networks:
+      - microservices-net
+
+networks:
+  microservices-net:
+    driver: bridge

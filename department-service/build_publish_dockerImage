@@ -1,0 +1,11 @@
+#!/bin/sh
+# ----------------------------------------------------------------------------
+echo "Inizio! maven build" 
+echo "" 
+./mvnw clean install  -s /c/Users/utente/.m2/noTLP_settings.xml
+echo "" 
+echo "Docker image build and publish!"
+echo "" 
+docker build ./ -t department-service
+echo "" 
+echo "Finito!"

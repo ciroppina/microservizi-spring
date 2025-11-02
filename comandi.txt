@@ -1,0 +1,11 @@
+
+	#	comandi CURL sui microservizi:
+	
+	#	creare un employee (microservizio 'employee-service')
+$ curl -X POST -k -i 'http://localhost:8081/employees' -H "Content-Type: application/json" -d '{"name":"John Doe", "department":"Engineering"}'
+
+	#	lista degli employees (microservizio 'department-service')
+$ curl 'http://localhost:8082/departments/employees' -H "Content-Type: application/json"  
+
+	#	retrive specifico employee (microservizio 'department-service')
+curl -X GET -k -i 'http://localhost:8082/departments/employees/1'
