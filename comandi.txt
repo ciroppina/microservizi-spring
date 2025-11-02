@@ -9,3 +9,19 @@ $ curl 'http://localhost:8082/departments/employees' -H "Content-Type: applicati
 
 	#	retrive specifico employee (microservizio 'department-service')
 curl -X GET -k -i 'http://localhost:8082/departments/employees/1'
+
+	
+	###	comandi Docker
+	
+	#	build images dei microservizi e avvio containers (prima, avviare Docker Desktop)
+$ docker-compose up --build
+
+	#	stop containers
+$ docker-compose stop 
+
+	#	start containers
+$ docker-compose start
+	
+	#	stato containers
+$ docker-compose ps -a
+
